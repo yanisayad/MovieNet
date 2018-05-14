@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieNetModel", "MovieNetModel\MovieNetModel.csproj", "{EBA99932-9B74-4DA1-9A82-E2859C240A56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieNet", "MovieNet\MovieNet.csproj", "{097DFB1C-FACC-45E4-8808-E78DAEF10178}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBA99932-9B74-4DA1-9A82-E2859C240A56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBA99932-9B74-4DA1-9A82-E2859C240A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBA99932-9B74-4DA1-9A82-E2859C240A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBA99932-9B74-4DA1-9A82-E2859C240A56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{097DFB1C-FACC-45E4-8808-E78DAEF10178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{097DFB1C-FACC-45E4-8808-E78DAEF10178}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{097DFB1C-FACC-45E4-8808-E78DAEF10178}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{097DFB1C-FACC-45E4-8808-E78DAEF10178}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56D510E2-9F84-4DBC-BDD0-5DC3D7309AC6}
+	EndGlobalSection
+EndGlobal
