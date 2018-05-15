@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MovieNetModel.Interface;
+using MovieNetModel.Factory;
+using MovieNetModel.Service;
 
 namespace MovieNetModel
 {
@@ -11,30 +14,19 @@ namespace MovieNetModel
 
         static void Main(string[] args)
         {
-
-            DataModelContainer ctx = new DataModelContainer();
-
             User user = new User();
+            ServiceFacade serviceFacade = new ServiceFacade();
+
 
             user.Firstname = "Yanis";
-            user.Lastname  = "AYAD";
-            user.Login     = "ayad_y";
+            user.Lastname = "AYAD";
+            user.Login = "ayad_y";
 
-            try
-            {
-                ctx.Users.Add(user);
+            serviceFacade.getUserDao().CreateUser(user);
 
-                ctx.SaveChanges();
-            }
-            catch (Exception e)
-            {
 
-                Console.Write("coucou");
-            }
-            
         }
-
-        
+            
 
     }
 }

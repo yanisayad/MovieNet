@@ -10,6 +10,6 @@ namespace MovieNetModel.Interface
     {
         Comment CreateComment(Comment comment);
         Comment UpdateComment(Comment comment);
-        bool DeleteMovie(Comment comment);
+        bool DeleteComment(Comment comment);
     }
 }

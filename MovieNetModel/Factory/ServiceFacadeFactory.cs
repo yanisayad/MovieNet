@@ -12,7 +12,7 @@ namespace MovieNetModel.Factory
         static public IServiceFacade getServiceFacade()
         {
             IServiceFacade serviceFacade;
-            serviceFacade = new ServiceFacade.ServiceFacade();
+            serviceFacade = new Service.ServiceFacade();
 
             return serviceFacade;
         }

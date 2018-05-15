@@ -11,7 +11,21 @@ namespace MovieNetModel.Dao
     {
         public User CreateUser(User user)
         {
-            throw new NotImplementedException();
+            DataModelContainer dataModelContainer = new DataModelContainer();
+
+            try
+            {
+                dataModelContainer.Users.Add(user);
+
+                dataModelContainer.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+            }
+
+            return user;
+            //throw new NotImplementedException();
         }
 
         public bool DeleteUser(User user)

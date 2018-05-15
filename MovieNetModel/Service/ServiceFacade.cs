@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MovieNetModel.Interface;
 using MovieNetModel.Factory;
 
-namespace MovieNetModel.ServiceFacade
+namespace MovieNetModel.Service
 {
     class ServiceFacade : IServiceFacade
     {

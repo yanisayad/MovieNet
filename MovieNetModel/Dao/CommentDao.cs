@@ -14,7 +14,7 @@ namespace MovieNetModel.Dao
             throw new NotImplementedException();
         }
 
-        public bool DeleteMovie(Comment comment)
+        public bool DeleteComment(Comment comment)
         {
             throw new NotImplementedException();
         }
