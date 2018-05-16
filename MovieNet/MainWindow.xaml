@@ -5,11 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MovieNet"
         mc:Ignorable="d"
-        DataContext="{Binding Source={StaticResource VM_Locator}, Path=VM_mainWindow }"
+        DataContext="{Binding Source={StaticResource VMLocator}, Path=MainVM}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="370,193,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <ListBox HorizontalAlignment="Left" Height="100" Margin="132,113,0,0" ItemsSource="{Binding Users}" DisplayMemberPath="Firstname" VerticalAlignment="Top" Width="100"/>
+        <Button Command="{Binding MyCommand}" Content="Ajouter un utilisateur" HorizontalAlignment="Left" Margin="35,257,0,0" VerticalAlignment="Top" Width="143" Click="Button_Click"/>
 
+        <TextBox Text="{Binding Firstname}" HorizontalAlignment="Left" Height="23" Margin="35,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="35,173,0,0" TextWrapping="Wrap" Text="Prénom" VerticalAlignment="Top" Width="143" TextChanged="TextBox_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="35,201,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Width="143"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="35,229,0,0" TextWrapping="Wrap" Text="Mot de passe" VerticalAlignment="Top" Width="143"/>
     </Grid>
 </Window>

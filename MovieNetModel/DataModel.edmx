@@ -30,6 +30,7 @@
     <Property Name="Firstname" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Lastname" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Movies">
     <Key>
@@ -118,6 +119,7 @@
           <Property Name="Login" Type="String" Nullable="false" />
           <NavigationProperty Name="Comments" Relationship="DataModel.UserComment" FromRole="User" ToRole="Comment" />
           <NavigationProperty Name="Movies" Relationship="DataModel.UserMovie" FromRole="User" ToRole="Movie" />
+          <Property Name="Password" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Movie">
           <Key>
@@ -165,6 +167,7 @@
           <ScalarProperty Name="Firstname" ColumnName="Firstname" />
           <ScalarProperty Name="Lastname" ColumnName="Lastname" />
           <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
