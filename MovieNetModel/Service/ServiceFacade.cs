@@ -8,10 +8,10 @@ using MovieNetModel.Factory;
 
 namespace MovieNetModel.Service
 {
-    class ServiceFacade : IServiceFacade
+    public class ServiceFacade : IServiceFacade
     {
-        private IUserDao userDao       = null;
-        private IMovieDao movieDao     = null;
+        private IUserDao    userDao    = null;
+        private IMovieDao   movieDao   = null;
         private ICommentDao commentDao = null;
 
         public ServiceFacade()

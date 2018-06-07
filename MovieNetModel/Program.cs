@@ -14,16 +14,6 @@ namespace MovieNetModel
 
         static void Main(string[] args)
         {
-            User user = new User();
-            ServiceFacade serviceFacade = new ServiceFacade();
-
-
-            user.Firstname = "Yanis";
-            user.Lastname = "AYAD";
-            user.Login = "ayad_y";
-
-            serviceFacade.getUserDao().CreateUser(user);
-
 
         }
             

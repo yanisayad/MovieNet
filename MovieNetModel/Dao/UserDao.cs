@@ -7,27 +7,37 @@ using MovieNetModel.Interface;
 
 namespace MovieNetModel.Dao
 {
-    class UserDao : IUserDao
+    public class UserDao : IUserDao
     {
+        DataModelContainer dataModelContainer = new DataModelContainer();
         public User CreateUser(User user)
         {
-            DataModelContainer dataModelContainer = new DataModelContainer();
+            //DataModelContainer dataModelContainer = new DataModelContainer();
 
             try
             {
+                //DataModelContainer dataModelContainer = new DataModelContainer();
                 dataModelContainer.Users.Add(user);
-
+               
                 dataModelContainer.SaveChanges();
+                Console.Write("OK USER CREATE");
             }
             catch (Exception e)
             {
-                Console.Write(e);
+                Console.Write("VOILCI MON EXCEPTION : " + e);
             }
 
             return user;
             //throw new NotImplementedException();
         }
 
+     /*   public List<User> GetAllUsers()
+        {
+            DataModelContainer dataModelContrainer = new DataModelContainer();
+
+            dataModelContrainer.Users.ToList<User>;
+        }@*/
+    
         public bool DeleteUser(User user)
         {
             throw new NotImplementedException();
@@ -37,5 +47,6 @@ namespace MovieNetModel.Dao
         {
             throw new NotImplementedException();
         }
+
     }
 }

@@ -7,7 +7,7 @@ using MovieNetModel.Interface;
 
 namespace MovieNetModel.Dao
 {
-    class MovieDao : IMovieDao
+    public class MovieDao : IMovieDao
     {
         public Movie CreateMovie(Movie movie)
         {

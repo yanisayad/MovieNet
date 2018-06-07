@@ -10,6 +10,7 @@ namespace MovieNetModel.Factory
 {
     abstract class AbstractDaoFactory
     {
+        //public abstract IUserDao getAllUsers();
         public abstract IUserDao getUserDao();
 
         public abstract IMovieDao getMovieDao();

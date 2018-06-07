@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace MovieNetModel.Interface
 {
-    interface IUserDao
+    public interface IUserDao
     {
         User CreateUser(User user);
+      //  User getUser();
+        //List<User> GetAllUsers();
         User UpdateUser(User user);
         bool DeleteUser(User user);
     }

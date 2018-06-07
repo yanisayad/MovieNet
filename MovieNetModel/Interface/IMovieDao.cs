@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MovieNetModel.Interface
 {
-    interface IMovieDao
+    public interface IMovieDao
     {
         Movie CreateMovie(Movie movie);
         Movie UpdateMovie(Movie movie);

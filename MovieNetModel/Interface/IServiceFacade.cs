@@ -6,21 +6,12 @@ using System.Threading.Tasks;
 
 namespace MovieNetModel.Interface
 {
-    public class IServiceFacade
+    public interface IServiceFacade
     {
-        IUserDao getUserDao(User user)
-        {
-            throw new NotImplementedException();
-        }
+        IUserDao getUserDao();
 
-        IMovieDao getMovieDao(Movie movie)
-        {
-            throw new NotImplementedException();
-        }
+        IMovieDao getMovieDao();
 
-        ICommentDao ICommentDao(Comment comment)
-        {
-            throw new NotImplementedException();
-        }
+        ICommentDao getCommentDao();
     }
 }

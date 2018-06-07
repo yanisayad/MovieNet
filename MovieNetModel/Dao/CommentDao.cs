@@ -7,7 +7,7 @@ using MovieNetModel.Interface;
 
 namespace MovieNetModel.Dao
 {
-    class CommentDao : ICommentDao
+    public class CommentDao : ICommentDao
     {
         public Comment CreateComment(Comment comment)
         {
