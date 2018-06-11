@@ -13,5 +13,6 @@ namespace MovieNetModel.Interface
         //List<User> GetAllUsers();
         User UpdateUser(User user);
         bool DeleteUser(User user);
+        void SearchUserToConnect(string login, string password);
     }
 }

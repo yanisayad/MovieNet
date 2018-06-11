@@ -15,16 +15,42 @@ namespace MovieNet
     public class MainViewModel : ViewModelBase
     {
         User user = new User();
+        IServiceFacade serviceFacade = ServiceFacadeFactory.getServiceFacade();
 
         public MainViewModel()
         {
-            Firstname = "Prénom";
-            Lastname  = "Nom";
-            Login     = "Login";
-            Password  = "Mot de passe";
+            Firstname = "";
+            Lastname  = "";
+            Login     = "";
+            Password  = "";
+            //LoginToConnect = "";
+            //PasswordToConnect = "";
             MyCommand = new RelayCommand(CreateUser, true);
+            Connexion = new RelayCommand(Connect, true);
+
         }
 
+        private string login_connect;
+        public string LoginToConnect
+        {
+            get { return login_connect; }
+            set
+            {
+                login_connect = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        private string password_connect;
+        public string PasswordToConnect
+        {
+            get { return password_connect; }
+            set
+            {
+                password_connect = value;
+                RaisePropertyChanged();
+            }
+        }
 
         public string Firstname
         {
@@ -67,14 +93,20 @@ namespace MovieNet
         }
 
         public RelayCommand MyCommand { get; }
+        public RelayCommand Connexion { get; }
 
         void CreateUser()
         {
-            IServiceFacade serviceFacade = ServiceFacadeFactory.getServiceFacade();
-
-            serviceFacade.getUserDao().CreateUser(user);
-                               
+            serviceFacade.getUserDao().CreateUser(user);                               
         }
 
+        void Connect()
+        { 
+            Console.Write("Voici mon login" + LoginToConnect);
+            Console.Write("Voici mon pwd" + PasswordToConnect);
+
+
+            serviceFacade.getUserDao().SearchUserToConnect(LoginToConnect, PasswordToConnect);
+        }
     }
 }
