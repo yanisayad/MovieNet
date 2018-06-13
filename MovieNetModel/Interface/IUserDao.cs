@@ -9,8 +9,8 @@ namespace MovieNetModel.Interface
     public interface IUserDao
     {
         User CreateUser(User user);
-      //  User getUser();
-        //List<User> GetAllUsers();
+        User getUser(int user_id);
+        List<User> GetAllUsers();
         User UpdateUser(User user);
         bool DeleteUser(User user);
         void SearchUserToConnect(string login, string password);

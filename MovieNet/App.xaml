@@ -6,6 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <local:VMLocator x:Key="VMLocator" />
+            <local:VMOffice x:Key="VMOffice" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

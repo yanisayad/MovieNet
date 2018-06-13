@@ -8,11 +8,12 @@
         DataContext="{Binding Source={StaticResource VMLocator}, Path=MainVM}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="339" Margin="10,49,0,0" Stroke="Black" VerticalAlignment="Top" Width="367"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="339" Margin="399,49,0,0" Stroke="Black" VerticalAlignment="Top" Width="383"/>
-
-        <Button Command="{Binding MyCommand}" Content="Inscivez-vous" HorizontalAlignment="Left" Margin="127,349,0,0" VerticalAlignment="Top" Width="143" Click="Button_Click"/>
-        <Button Command="{Binding Connexion}" Content="Connectez-vous" HorizontalAlignment="Left" Margin="520,274,0,0" VerticalAlignment="Top" Width="144"/>
+        
+        <Button Command="{Binding MyCommand}" Content="Inscrivez-vous" HorizontalAlignment="Left" Margin="127,349,0,0" VerticalAlignment="Top" Width="143" Click="Button_Click"/>
+        <Button Command="{Binding Connexion}" Click="GoToOffice" Content="Connectez-vous" HorizontalAlignment="Left" Margin="520,274,0,0" VerticalAlignment="Top" Width="144"/>
 
 
         <TextBox Text="{Binding Firstname}" HorizontalAlignment="Left" Height="23" Margin="127,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
@@ -27,6 +28,6 @@
         <TextBox Text="{Binding PasswordToConnect}" HorizontalAlignment="Left" Height="23" Margin="531,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Login" HorizontalAlignment="Left" Margin="531,131,0,0" VerticalAlignment="Top"/>
         <Label Content="Mot de passe" HorizontalAlignment="Left" Margin="531,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,-0.192"/>
-
+        <Frame x:Name="Office"></Frame>
     </Grid>
 </Window>

@@ -11,5 +11,7 @@ namespace MovieNetModel.Interface
         Movie CreateMovie(Movie movie);
         Movie UpdateMovie(Movie movie);
         bool DeleteMovie(Movie movie);
+        List<Movie> GetAllMovies();
+        Movie GetMovie(int movie_id);
     }
 }

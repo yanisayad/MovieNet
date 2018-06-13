@@ -9,12 +9,14 @@ using MovieNetModel.Interface;
 using MovieNetModel.Factory;
 using MovieNetModel.Service;
 using MovieNetModel;
+using System.Windows.Controls;
+using System.Windows.Navigation;
 
 namespace MovieNet
 {
     public class MainViewModel : ViewModelBase
     {
-        User user = new User();
+        User user   = new User();
         IServiceFacade serviceFacade = ServiceFacadeFactory.getServiceFacade();
 
         public MainViewModel()
@@ -23,12 +25,13 @@ namespace MovieNet
             Lastname  = "";
             Login     = "";
             Password  = "";
-            //LoginToConnect = "";
-            //PasswordToConnect = "";
             MyCommand = new RelayCommand(CreateUser, true);
             Connexion = new RelayCommand(Connect, true);
 
         }
+
+        public Page MyPage { get; set; }
+
 
         private string login_connect;
         public string LoginToConnect
@@ -102,11 +105,11 @@ namespace MovieNet
 
         void Connect()
         { 
-            Console.Write("Voici mon login" + LoginToConnect);
-            Console.Write("Voici mon pwd" + PasswordToConnect);
-
-
-            serviceFacade.getUserDao().SearchUserToConnect(LoginToConnect, PasswordToConnect);
+            if (LoginToConnect != null && PasswordToConnect != null)
+            {
+                serviceFacade.getUserDao().SearchUserToConnect(LoginToConnect, PasswordToConnect);
+            }
         }
     }
+       
 }

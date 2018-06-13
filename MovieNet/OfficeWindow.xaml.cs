@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace MovieNet
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for OfficeWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OfficeWindow : Page
     {
-        public MainWindow()
+        public OfficeWindow()
         {
             InitializeComponent();
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -40,14 +30,9 @@ namespace MovieNet
 
         }
 
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void GoToOffice(object sender, RoutedEventArgs e)
-        {
-            Office.Content = new OfficeWindow();
+            Movies.Content = new MoviesWindow();
         }
     }
 }
