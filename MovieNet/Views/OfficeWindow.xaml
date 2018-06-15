@@ -11,9 +11,11 @@
     <Grid>
         <Rectangle  Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="440" Stroke="Black" VerticalAlignment="Top" Width="790"/>
         <StackPanel Background="LightGreen" HorizontalAlignment="Left" Height="49" Margin="10,10,0,0" VerticalAlignment="Top" Width="770"/>
-        <Button Content="Utilisateurs" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top" Width="115" Height="49"/>
-        <Button Content="Films" HorizontalAlignment="Left" Margin="493,10,0,0" VerticalAlignment="Top" Width="136" Height="49" Click="Button_Click"/>
+        <Button Content="Utilisateurs" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top" Width="115" Height="49" Click="GoToUsers"/>
+        <Button Content="Films" HorizontalAlignment="Left" Margin="493,10,0,0" VerticalAlignment="Top" Width="136" Height="49" Click="GoToMovies"/>
 
         <Frame x:Name="Movies"></Frame>
+        <Frame x:Name="Users"></Frame>
+   
     </Grid>
 </Page>

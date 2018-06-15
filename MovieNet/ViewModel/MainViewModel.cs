@@ -30,9 +30,6 @@ namespace MovieNet
 
         }
 
-        public Page MyPage { get; set; }
-
-
         private string login_connect;
         public string LoginToConnect
         {

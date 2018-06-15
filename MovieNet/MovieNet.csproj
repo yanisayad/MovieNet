@@ -78,19 +78,33 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AuthenticationService.cs" />
-    <Compile Include="MoviesViewModel.cs" />
-    <Compile Include="MoviesWindow.xaml.cs">
+    <Compile Include="ViewModel\CommentsViewModel.cs" />
+    <Compile Include="ViewModel\MoviesViewModel.cs" />
+    <Compile Include="ViewModel\UsersViewModel.cs" />
+    <Compile Include="Views\CommentsWindow.xaml.cs">
+      <DependentUpon>CommentsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MoviesWindow.xaml.cs">
       <DependentUpon>MoviesWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OfficeViewModel.cs" />
-    <Compile Include="OfficeWindow.xaml.cs">
+    <Compile Include="ViewModel\OfficeViewModel.cs" />
+    <Compile Include="Views\OfficeWindow.xaml.cs">
       <DependentUpon>OfficeWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VMMovies.cs" />
-    <Compile Include="VMOffice.cs" />
-    <Compile Include="MainViewModel.cs" />
-    <Compile Include="VMLocator.cs" />
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Views\UsersWindow.xaml.cs">
+      <DependentUpon>UsersWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VM\VMComments.cs" />
+    <Compile Include="VM\VMMovies.cs" />
+    <Compile Include="VM\VMOffice.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="VM\VMLocator.cs" />
+    <Compile Include="VM\VMUsers.cs" />
+    <Page Include="Views\CommentsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -98,15 +112,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MoviesWindow.xaml">
+    <Page Include="Views\MoviesWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="OfficeWindow.xaml">
+    <Page Include="Views\OfficeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UsersWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,9 +165,6 @@
       <Name>MovieNetModel</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

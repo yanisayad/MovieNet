@@ -25,14 +25,14 @@ namespace MovieNet
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void GoToMovies(object sender, RoutedEventArgs e)
         {
             Movies.Content = new MoviesWindow();
+        }
+
+        private void GoToUsers(object sender, RoutedEventArgs e)
+        {
+            Users.Content = new UsersWindow();
         }
     }
 }

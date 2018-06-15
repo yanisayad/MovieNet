@@ -2,11 +2,14 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:MovieNet"
-             StartupUri="MainWindow.xaml">
+             StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <local:VMLocator x:Key="VMLocator" />
             <local:VMOffice x:Key="VMOffice" />
+            <local:VMMovies x:Key="VMMovies" />
+            <local:VMComments x:Key="VMComments" />
+            <local:VMUsers x:Key="VMUsers" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
