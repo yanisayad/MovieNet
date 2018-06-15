@@ -16,6 +16,7 @@ namespace MovieNet
     public class MoviesViewModel : ViewModelBase
     {
         Movie movie = new Movie();
+        Comment comment = new Comment();
         IServiceFacade serviceFacade = ServiceFacadeFactory.getServiceFacade();
 
         public MoviesViewModel()
@@ -24,7 +25,38 @@ namespace MovieNet
             Duration = "";
             Description = "";
             CreateMovie = new RelayCommand(Create, true);
+            UpdateMovie = new RelayCommand(Update, true);
+            DeleteMovie = new RelayCommand(Delete, true);
 
+            CreateComment = new RelayCommand(CommentCreate, true);
+
+            Movies = serviceFacade.getMovieDao().GetAllMovies();
+            SelectItem = new Movie();
+
+            Comments = serviceFacade.getCommentDao().GetAllComments();
+
+        }
+
+        private List<Movie> movies;
+        public List<Movie> Movies
+        {
+            get { return movies; }
+            set
+            {
+                movies = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        private Movie select_item;
+        public Movie SelectItem
+        {
+            get { return select_item; }
+            set
+            {
+                select_item = value;
+                RaisePropertyChanged();
+            }
         }
 
         //private string title;
@@ -58,6 +90,8 @@ namespace MovieNet
         }
 
         public RelayCommand CreateMovie { get; }
+        public RelayCommand UpdateMovie { get; }
+        public RelayCommand DeleteMovie { get; }
 
         void Create()
         {
@@ -68,9 +102,67 @@ namespace MovieNet
             movie.User = (User)Application.Current.Properties["UserConnect"];
 
             serviceFacade.getMovieDao().CreateMovie(movie);
+            Movies = serviceFacade.getMovieDao().GetAllMovies();
+        }
+
+        void Update()
+        {
+            serviceFacade.getMovieDao().UpdateMovie(SelectItem);
+            Movies = serviceFacade.getMovieDao().GetAllMovies();
+        }
+
+        void Delete()
+        {
+            serviceFacade.getMovieDao().DeleteMovie(SelectItem);
+            Movies = serviceFacade.getMovieDao().GetAllMovies();
+        }
+
+
+        public RelayCommand CreateComment { get; }
+
+        //  private string comment_title;
+
+
+
+        private List<Comment> comments;
+        public List<Comment> Comments
+        {
+            get { return comments; }
+            set
+            {
+                comments = value;
+                RaisePropertyChanged();
+            }
         } 
 
+        public string CommentTitle
+        {
+            get { return comment.Title; }
+            set {
+                comment.Title = value;
+                RaisePropertyChanged();
+            }
+        }
 
-    
+//        private string comment_content;
+
+        public string CommentContent
+        {
+            get { return comment.Content; }
+            set {
+                comment.Content = value;
+                RaisePropertyChanged();
+
+            }
+        }
+
+
+        void CommentCreate()
+        {
+            comment.User = (User)Application.Current.Properties["UserConnect"];
+            comment.Movie = SelectItem;
+            serviceFacade.getCommentDao().CreateComment(comment);
+            SelectItem.Comments = serviceFacade.getCommentDao().GetAllComments();
+        }
     }
 }

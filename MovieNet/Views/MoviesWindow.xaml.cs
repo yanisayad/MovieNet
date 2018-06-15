@@ -34,5 +34,7 @@ namespace MovieNet
         {
             Users.Content = new UsersWindow();
         }
+
+   
     }
 }
