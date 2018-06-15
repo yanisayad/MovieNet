@@ -15,7 +15,7 @@ namespace MovieNetModel.Factory
 
         public abstract IMovieDao getMovieDao(DataModelContainer dataModel);
 
-        public abstract ICommentDao getCommentDao();
+        public abstract ICommentDao getCommentDao(DataModelContainer dataModel);
 
         public static AbstractDaoFactory getFactory()
         {

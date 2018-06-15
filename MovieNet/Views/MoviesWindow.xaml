@@ -13,7 +13,7 @@
         <Rectangle  Fill="#FFF4F4F5" Height="898" Stroke="Black" VerticalAlignment="Top" Margin="-111,-117,-205,-331"/>
         <Button Content="Menu" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top" Width="115" Height="49" Click="GoToOffice"/>
         <Button Content="Users" HorizontalAlignment="Left" Margin="776,10,0,0" VerticalAlignment="Top" Width="136" Height="49" Click="GoToUsers"/>
-        <Button Command="{Binding CreateMovie}" Content="Déposez votre film" Margin="28,355,1150,0" VerticalAlignment="Top" Width="115" Height="36"/>
+        <Button  HorizontalAlignment="Left" Command="{Binding CreateMovie}" Content="Déposez votre film" Margin="28,355,1150,0" VerticalAlignment="Top" Width="115" Height="36"/>
 
 
 
@@ -36,22 +36,28 @@
 
 
         <ListBox HorizontalAlignment="Left" Height="299" Margin="537,92,0,0" VerticalAlignment="Top" Width="171" RenderTransformOrigin="0.5,0.5"/>
-        <ListBox HorizontalAlignment="Left" Height="299" Margin="732,92,0,0" VerticalAlignment="Top" Width="179"/>
-        <ListBox DisplayMemberPath="Title" ItemsSource="{Binding SelectItem.Comments}" HorizontalAlignment="Left" Height="299" Margin="938,92,0,0" VerticalAlignment="Top" Width="187"/>
+        <ListBox DisplayMemberPath="Title" ItemsSource="{Binding SelectItem.Comments}" SelectedItem="{Binding SelectComment}"  Margin="732,92,0,0" HorizontalAlignment="Left" Height="299"  VerticalAlignment="Top" Width="187"/>
+        <ListBox HorizontalAlignment="Left" Height="299" Margin="938,92,0,0" VerticalAlignment="Top" Width="179">
+            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding SelectComment.Title}" Width="120"/>
+            <TextBox Height="130" TextWrapping="Wrap" Text="{Binding SelectComment.Content}" Width="169"/>
+            <Button Command="{Binding UpdateComment}" Content="Modifier" Width="140"/>
+            <Button Command="{Binding DeleteComment}" Content="Supprimer" Width="140"/>
+        </ListBox>
+
 
 
         <TextBox HorizontalAlignment="Left" Height="23" Margin="537,115,0,0" TextWrapping="Wrap" Text="{Binding CommentTitle}" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="157" Margin="537,173,0,0" TextWrapping="Wrap" Text="{Binding CommentContent}" VerticalAlignment="Top" Width="171"/>
         <Label Content="Titre" HorizontalAlignment="Left" Margin="540,92,0,0" VerticalAlignment="Top"/>
         <Label Content="Contenu" HorizontalAlignment="Left" Margin="537,143,0,0" VerticalAlignment="Top"/>
-        <Button Command="{Binding CreateComment}" Content="Déposez votre com'" Margin="28,340,90,0" VerticalAlignment="Top" Width="115" Height="36"/>
+        <Button  HorizontalAlignment="Left" Command="{Binding CreateComment}" Content="Déposez votre com'" Margin="565,340,0,0" VerticalAlignment="Top" Width="115" Height="36"/>
 
 
-
-        <Frame x:Name="Users" Margin="0,0,0,0"></Frame>
-        <Frame x:Name="Office" Margin="0,0,0,0"></Frame>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="191,396,0,0" TextWrapping="Wrap" Text="{Binding NameToSearch}" VerticalAlignment="Top" Width="134"/>
         <Button Command="{Binding SearchMovie}" Content="Rechercher" HorizontalAlignment="Left" Margin="191,424,0,0" VerticalAlignment="Top" Width="134"/>
         <Button Command="{Binding ResetSearch}" Content="Rétablir" HorizontalAlignment="Left" Margin="191,449,0,0" VerticalAlignment="Top" Width="134"/>
+
+        <Frame x:Name="Users" Margin="0,0,0,0"></Frame>
+        <Frame x:Name="Office" Margin="0,0,0,0"></Frame>
     </Grid>
 </Page>

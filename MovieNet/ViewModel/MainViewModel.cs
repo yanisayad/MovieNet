@@ -30,7 +30,6 @@ namespace MovieNet
             OfficeView = office;
             MyCommand = new RelayCommand(CreateUser, true);
             Connexion = new RelayCommand(Connect, true);
-
         }
 
         private string login_connect;
@@ -100,7 +99,16 @@ namespace MovieNet
 
         void CreateUser()
         {
-            serviceFacade.getUserDao().CreateUser(user);                               
+            if (
+               String.IsNullOrEmpty(Firstname) ||
+               String.IsNullOrEmpty(Lastname) ||
+               String.IsNullOrEmpty(Login) ||
+               String.IsNullOrEmpty(Password)
+           ){
+                return;
+            }
+
+            serviceFacade.getUserDao().CreateUser(user);
         }
 
         bool CheckForm()

@@ -9,7 +9,11 @@ namespace MovieNetModel.Dao
 {
     public class CommentDao : ICommentDao
     {
-        DataModelContainer dataModelContainer = new DataModelContainer();
+        DataModelContainer dataModelContainer;
+        public CommentDao (DataModelContainer dataModel)
+        {
+            dataModelContainer = dataModel;
+        }
 
         public Comment CreateComment(Comment comment)
         {

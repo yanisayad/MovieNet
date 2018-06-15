@@ -9,15 +9,19 @@
       DataContext="{Binding Source={StaticResource VMUsers}, Path=UsersVM}"
       Title="UsersWindow">
 
-    <Grid>
-        <Rectangle  Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="440" Stroke="Black" VerticalAlignment="Top" Width="790"/>
-        <Button Content="Menu" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top" Width="115" Height="49" Click="GoToOffice"/>
-        <Button Content="Films" HorizontalAlignment="Left" Margin="493,10,0,0" VerticalAlignment="Top" Width="136" Height="49" Click="GoToMovies"/>
+    <Grid Margin="0,0,-500, -500">
+        <Rectangle  Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="940" Stroke="Black" VerticalAlignment="Top" Width="1290"/>
+        <Button Content="Menu" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top" Width="246" Height="49" Click="GoToOffice" RenderTransformOrigin="0.5,0.5">
+           
+        </Button>
+        <Button Content="Films" HorizontalAlignment="Left" Margin="880,10,0,0" VerticalAlignment="Top" Width="229" Height="49" Click="GoToMovies"/>
 
 
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="369" Margin="10,71,0,0" Stroke="Black" VerticalAlignment="Top" Width="780"/>
-        <ListBox DisplayMemberPath="Firstname" ItemsSource="{Binding Users}"  SelectedItem="{Binding SelectItem}" HorizontalAlignment="Left" Height="338" Margin="27,87,0,0" VerticalAlignment="Top" Width="157"/>
-        <ListBox HorizontalAlignment="Left" Height="338" Margin="241,87,0,0" VerticalAlignment="Top" Width="174">
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="756" Margin="10,71,0,0" Stroke="Black" VerticalAlignment="Top" Width="1263"/>
+        <ListBox DisplayMemberPath="Firstname" ItemsSource="{Binding Users}"  SelectedItem="{Binding SelectItem}" HorizontalAlignment="Left" Height="338" Margin="408,91,0,0" VerticalAlignment="Top" Width="189" RenderTransformOrigin="0.5,0.5">
+
+        </ListBox>
+        <ListBox HorizontalAlignment="Left" Height="338" Margin="647,87,0,0" VerticalAlignment="Top" Width="190">
             <TextBox Height="23" TextWrapping="Wrap" Text="{Binding SelectItem.Firstname}" Width="164"/>
             <TextBox Height="23" TextWrapping="Wrap" Text="{Binding SelectItem.Lastname}" Width="164"/>
             <TextBox Height="23" TextWrapping="Wrap" Text="{Binding SelectItem.Password}" Width="164"/>

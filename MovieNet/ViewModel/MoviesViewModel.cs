@@ -31,6 +31,8 @@ namespace MovieNet
             ResetSearch = new RelayCommand(Reset, true);
 
             CreateComment = new RelayCommand(CommentCreate, true);
+            UpdateComment = new RelayCommand(CommentUpdate, true);
+            DeleteComment = new RelayCommand(CommentDelete, true);
 
             Movies = serviceFacade.getMovieDao().GetAllMovies();
             SelectItem = new Movie();
@@ -61,7 +63,18 @@ namespace MovieNet
             }
         }
 
-        //private string title;
+        private Comment select_comment;
+        public Comment SelectComment
+        {
+            get { return select_comment; }
+            set
+            {
+                select_comment = value;
+                RaisePropertyChanged();
+            }
+        }
+
+
         public string Title
         {
             get { return movie.Title; }
@@ -71,7 +84,6 @@ namespace MovieNet
             }
         }
 
-        //private string duration;
         public string Duration
         {
             get { return movie.Duration; }
@@ -81,7 +93,6 @@ namespace MovieNet
             }
         }
 
-        //private string description;
         public string Description
         {
             get { return movie.Description; }
@@ -121,10 +132,8 @@ namespace MovieNet
 
 
         public RelayCommand CreateComment { get; }
-
-        //  private string comment_title;
-
-
+        public RelayCommand UpdateComment { get; }
+        public RelayCommand DeleteComment { get; }
 
         private List<Comment> comments;
         public List<Comment> Comments
@@ -146,8 +155,6 @@ namespace MovieNet
             }
         }
 
-//        private string comment_content;
-
         public string CommentContent
         {
             get { return comment.Content; }
@@ -158,12 +165,27 @@ namespace MovieNet
             }
         }
 
-
         void CommentCreate()
         {
             comment.User = (User)Application.Current.Properties["UserConnect"];
             comment.Movie = SelectItem;
             serviceFacade.getCommentDao().CreateComment(comment);
+            SelectItem.Comments = serviceFacade.getCommentDao().GetAllComments();
+        }
+
+        void CommentUpdate()
+        {
+            comment.User = (User)Application.Current.Properties["UserConnect"];
+            comment.Movie = SelectItem;
+            serviceFacade.getCommentDao().UpdateComment(comment);
+            SelectItem.Comments = serviceFacade.getCommentDao().GetAllComments();
+        }
+
+        void CommentDelete()
+        {
+            comment.User = (User)Application.Current.Properties["UserConnect"];
+            comment.Movie = SelectItem;
+            serviceFacade.getCommentDao().DeleteComment(comment);
             SelectItem.Comments = serviceFacade.getCommentDao().GetAllComments();
         }
 

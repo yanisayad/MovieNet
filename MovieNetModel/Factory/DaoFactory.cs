@@ -20,9 +20,9 @@ namespace MovieNetModel.Factory
             return new MovieDao(dataModel);
         }
 
-        public override ICommentDao getCommentDao()
+        public override ICommentDao getCommentDao(DataModelContainer dataModel)
         {
-            return new CommentDao();
+            return new CommentDao(dataModel);
         }
     }
 }

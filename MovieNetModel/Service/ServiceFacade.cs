@@ -21,7 +21,7 @@ namespace MovieNetModel.Service
         {
             userDao = DaoFactory.getFactory().getUserDao(dataModelContainer);
             movieDao = DaoFactory.getFactory().getMovieDao(dataModelContainer);
-            commentDao = DaoFactory.getFactory().getCommentDao();
+            commentDao = DaoFactory.getFactory().getCommentDao(dataModelContainer);
 
         }
 
