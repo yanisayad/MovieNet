@@ -24,5 +24,16 @@ namespace MovieNet
         {
             InitializeComponent();
         }
+
+        private void GoToOffice(object sender, RoutedEventArgs e)
+        {
+            Office.Content = new OfficeWindow();
+        }
+
+        private void GoToMovies(object sender, RoutedEventArgs e)
+        {
+            Movies.Content = new MoviesWindow();
+
+        }
     }
 }

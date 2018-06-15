@@ -14,7 +14,7 @@ namespace MovieNet
 {
     public class AuthenticationService : ViewModelBase
     {
-        public User UserConnected;
+        public User UserConnected;             
 
         void SetCookieUser(User user) 
         {

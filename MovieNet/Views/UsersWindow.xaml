@@ -10,6 +10,11 @@
       Title="UsersWindow">
 
     <Grid>
+        <Rectangle  Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="440" Stroke="Black" VerticalAlignment="Top" Width="790"/>
+        <Button Content="Menu" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top" Width="115" Height="49" Click="GoToOffice"/>
+        <Button Content="Films" HorizontalAlignment="Left" Margin="493,10,0,0" VerticalAlignment="Top" Width="136" Height="49" Click="GoToMovies"/>
+
+
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="369" Margin="10,71,0,0" Stroke="Black" VerticalAlignment="Top" Width="780"/>
         <ListBox DisplayMemberPath="Firstname" ItemsSource="{Binding Users}"  SelectedItem="{Binding SelectItem}" HorizontalAlignment="Left" Height="338" Margin="27,87,0,0" VerticalAlignment="Top" Width="157"/>
         <ListBox HorizontalAlignment="Left" Height="338" Margin="241,87,0,0" VerticalAlignment="Top" Width="174">
@@ -19,6 +24,9 @@
             <Button Command="{Binding Update}" Content="Modifier" Width="147"/>
             <Button Command="{Binding Delete}" Content="Supprimer" Width="146"/>
         </ListBox>
+
+        <Frame x:Name="Movies"></Frame>
+        <Frame x:Name="Office"></Frame>
 
     </Grid>
 </Page>
