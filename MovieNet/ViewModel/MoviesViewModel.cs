@@ -27,6 +27,8 @@ namespace MovieNet
             CreateMovie = new RelayCommand(Create, true);
             UpdateMovie = new RelayCommand(Update, true);
             DeleteMovie = new RelayCommand(Delete, true);
+            SearchMovie = new RelayCommand(Search, true);
+            ResetSearch = new RelayCommand(Reset, true);
 
             CreateComment = new RelayCommand(CommentCreate, true);
 
@@ -163,6 +165,30 @@ namespace MovieNet
             comment.Movie = SelectItem;
             serviceFacade.getCommentDao().CreateComment(comment);
             SelectItem.Comments = serviceFacade.getCommentDao().GetAllComments();
+        }
+
+        public RelayCommand SearchMovie { get; }
+        public RelayCommand ResetSearch { get; }
+
+        private string name_to_search;
+        public string NameToSearch
+        {
+            get { return name_to_search; }
+            set {
+                name_to_search = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        void Search()
+        {
+            Movies = serviceFacade.getMovieDao().SearchMovies(NameToSearch);
+        } 
+
+        void Reset()
+        {
+            Movies = serviceFacade.getMovieDao().GetAllMovies();
+            NameToSearch = "";
         }
     }
 }

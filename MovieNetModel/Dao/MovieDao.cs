@@ -65,5 +65,12 @@ namespace MovieNetModel.Dao
             return movie;
         }
 
+        public List<Movie> SearchMovies(string name)
+        {
+            List<Movie> search_movies = dataModelContainer.Movies.Where(m => m.Title.Contains(name)).ToList();
+
+            return search_movies;
+        }
+
     }
 }

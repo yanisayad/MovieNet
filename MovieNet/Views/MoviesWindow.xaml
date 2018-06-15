@@ -50,5 +50,8 @@
 
         <Frame x:Name="Users" Margin="0,0,0,0"></Frame>
         <Frame x:Name="Office" Margin="0,0,0,0"></Frame>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="191,396,0,0" TextWrapping="Wrap" Text="{Binding NameToSearch}" VerticalAlignment="Top" Width="134"/>
+        <Button Command="{Binding SearchMovie}" Content="Rechercher" HorizontalAlignment="Left" Margin="191,424,0,0" VerticalAlignment="Top" Width="134"/>
+        <Button Command="{Binding ResetSearch}" Content="Rétablir" HorizontalAlignment="Left" Margin="191,449,0,0" VerticalAlignment="Top" Width="134"/>
     </Grid>
 </Page>

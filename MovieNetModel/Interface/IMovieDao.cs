@@ -13,5 +13,6 @@ namespace MovieNetModel.Interface
         bool DeleteMovie(Movie movie);
         List<Movie> GetAllMovies();
         Movie GetMovie(int movie_id);
+        List<Movie> SearchMovies(string name);
     }
 }
