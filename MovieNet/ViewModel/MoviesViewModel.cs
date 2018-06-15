@@ -8,58 +8,68 @@ using MovieNetModel;
 using MovieNetModel.Service;
 using MovieNetModel.Interface;
 using MovieNetModel.Factory;
-
+using System.Windows;
+using GalaSoft.MvvmLight.CommandWpf;
 
 namespace MovieNet
 {
     public class MoviesViewModel : ViewModelBase
     {
-       /* List<Movie> AllMovies = new List<Movie>();
+        Movie movie = new Movie();
         IServiceFacade serviceFacade = ServiceFacadeFactory.getServiceFacade();
-
-        public MoviesViewModel()
-        {
-            
-        }
-
-    */
 
         public MoviesViewModel()
         {
             Title = "";
             Duration = "";
             Description = "";
+            CreateMovie = new RelayCommand(Create, true);
+
         }
 
-        private string title;
+        //private string title;
         public string Title
         {
-            get { return title; }
+            get { return movie.Title; }
             set {
-                title = value;
+                movie.Title = value;
                 RaisePropertyChanged();
             }
         }
 
-        private string duration;
+        //private string duration;
         public string Duration
         {
-            get { return duration; }
+            get { return movie.Duration; }
             set {
-                duration = value;
+                movie.Duration = value;
                 RaisePropertyChanged();
             }
         }
 
-        private string description;
+        //private string description;
         public string Description
         {
-            get { return description; }
+            get { return movie.Description; }
             set {
-                description = value;
+                movie.Description = value;
                 RaisePropertyChanged();
             }
         }
+
+        public RelayCommand CreateMovie { get; }
+
+        void Create()
+        {
+            if (String.IsNullOrEmpty(Title) || String.IsNullOrEmpty(Duration) || String.IsNullOrEmpty(Description))
+            {
+                return;
+            }
+            movie.User = (User)Application.Current.Properties["UserConnect"];
+
+            serviceFacade.getMovieDao().CreateMovie(movie);
+        } 
+
 
     
     }

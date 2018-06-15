@@ -15,7 +15,7 @@ namespace MovieNetModel.Factory
 
             if (serviceFacade == null)
             {
-                serviceFacade = new Service.ServiceFacade();
+                serviceFacade = Service.ServiceFacade.Instance;
             }
 
             return serviceFacade;

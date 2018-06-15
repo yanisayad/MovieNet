@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MovieNetModel.Interface;
+using MovieNetModel.Service;
 
 namespace MovieNetModel.Dao
 {
     public class UserDao : IUserDao
     {
-        DataModelContainer dataModelContainer = new DataModelContainer();
+        DataModelContainer dataModelContainer;
+
+        public UserDao(DataModelContainer dataModel)
+        {
+            dataModelContainer = dataModel;
+        }
 
         public User CreateUser(User user)
         {
@@ -62,12 +68,12 @@ namespace MovieNetModel.Dao
         }
 
 
-        public void SearchUserToConnect(string login, string password)
+        public User SearchUserToConnect(string login, string password)
         {
 
-            var query = dataModelContainer.Users.Where(u => u.Login.Equals(login)).Where(u => u.Password.Equals(password)).ToList();
+           var query =  dataModelContainer.Users.Where(u => u.Login.Equals(login)).Where(u => u.Password.Equals(password)).ToList().FirstOrDefault();
 
-            dataModelContainer.SaveChanges();
+            return query;
  
         }
     }

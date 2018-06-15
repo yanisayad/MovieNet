@@ -8,18 +8,31 @@ using MovieNetModel.Factory;
 
 namespace MovieNetModel.Service
 {
-    public class ServiceFacade : IServiceFacade
+    public sealed class ServiceFacade : IServiceFacade
     {
+        private static readonly ServiceFacade instance = new ServiceFacade();
+        private DataModelContainer dataModelContainer = new DataModelContainer();
+
         private IUserDao    userDao    = null;
         private IMovieDao   movieDao   = null;
         private ICommentDao commentDao = null;
 
-        public ServiceFacade()
+        private ServiceFacade()
         {
-            userDao    = DaoFactory.getFactory().getUserDao();
-            movieDao   = DaoFactory.getFactory().getMovieDao();
+            userDao = DaoFactory.getFactory().getUserDao(dataModelContainer);
+            movieDao = DaoFactory.getFactory().getMovieDao(dataModelContainer);
             commentDao = DaoFactory.getFactory().getCommentDao();
+
         }
+
+        public static ServiceFacade Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
 
         public IUserDao getUserDao()
         {

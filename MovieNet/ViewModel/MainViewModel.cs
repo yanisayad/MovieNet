@@ -11,20 +11,23 @@ using MovieNetModel.Service;
 using MovieNetModel;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using System.Windows;
 
 namespace MovieNet
 {
     public class MainViewModel : ViewModelBase
     {
         User user   = new User();
+        Frame OfficeView;
         IServiceFacade serviceFacade = ServiceFacadeFactory.getServiceFacade();
 
-        public MainViewModel()
+        public MainViewModel(Frame office)
         {
             Firstname = "";
             Lastname  = "";
             Login     = "";
             Password  = "";
+            OfficeView = office;
             MyCommand = new RelayCommand(CreateUser, true);
             Connexion = new RelayCommand(Connect, true);
 
@@ -100,11 +103,31 @@ namespace MovieNet
             serviceFacade.getUserDao().CreateUser(user);                               
         }
 
+        bool CheckForm()
+        {
+            if (
+                String.IsNullOrEmpty(Firstname) || 
+                String.IsNullOrEmpty(Lastname) || 
+                String.IsNullOrEmpty(Login) ||
+                String.IsNullOrEmpty(Password) 
+            )
+            {
+                return false;
+            }
+            return true;
+        }
+
         void Connect()
         { 
             if (LoginToConnect != null && PasswordToConnect != null)
             {
-                serviceFacade.getUserDao().SearchUserToConnect(LoginToConnect, PasswordToConnect);
+                User UserConnect = serviceFacade.getUserDao().SearchUserToConnect(LoginToConnect, PasswordToConnect);
+                Application.Current.Properties["UserConnect"] = UserConnect;
+                
+                if ((User)Application.Current.Properties["UserConnect"] != null)
+                {
+                    OfficeView.Content = new OfficeWindow();
+                }
             }
         }
     }

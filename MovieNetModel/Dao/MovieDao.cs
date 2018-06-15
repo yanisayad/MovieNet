@@ -9,7 +9,12 @@ namespace MovieNetModel.Dao
 {
     public class MovieDao : IMovieDao
     {
-        DataModelContainer dataModelContainer = new DataModelContainer();
+        DataModelContainer dataModelContainer;
+
+        public MovieDao(DataModelContainer dataModel)
+        {
+            dataModelContainer = dataModel;
+        }
 
         public Movie CreateMovie(Movie movie)
         {

@@ -14,20 +14,17 @@
         <Button Content="Menu" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top" Width="115" Height="49" Click="GoToOffice"/>
         <Button Content="Users" HorizontalAlignment="Left" Margin="493,10,0,0" VerticalAlignment="Top" Width="136" Height="49" Click="GoToUsers"/>
 
-        <Rectangle Fill="#FFF4F4F5" Margin="0,69,10,10" Stroke="Black" HorizontalAlignment="Right" Width="780"/>
+        <Rectangle Fill="#FFF4F4F5" Margin="0,89,10,10" Stroke="Black" HorizontalAlignment="Right" Width="790"/>
 
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="318" Margin="32,96,0,0" VerticalAlignment="Top" Width="206">
-            
-        </Border>
         <Frame x:Name="Users"></Frame>
         <Frame x:Name="Office"></Frame>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="57,135,0,0" TextWrapping="Wrap" Text="{Binding Title}" VerticalAlignment="Top" Width="158"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="57,188,0,0" TextWrapping="Wrap" Text="{Binding Duration}" VerticalAlignment="Top" Width="158"/>
-        <TextBox HorizontalAlignment="Left" Height="74" Margin="57,262,0,0" TextWrapping="Wrap" Text="{Binding Description}" VerticalAlignment="Top" Width="158"/>
+        <TextBox HorizontalAlignment="Left" Height="74" Margin="57,250,0,0" TextWrapping="Wrap" Text="{Binding Description}" VerticalAlignment="Top" Width="158"/>
         <Label Content="Titre" HorizontalAlignment="Left" Margin="57,104,0,0" VerticalAlignment="Top"/>
         <Label Content="Durée" HorizontalAlignment="Left" Margin="57,163,0,0" VerticalAlignment="Top"/>
-        <Label Content="Description" HorizontalAlignment="Left" Margin="57,236,0,0" VerticalAlignment="Top"/>
-        <Button Command="{Binding Create}" Content="Déposez votre film" Margin="72,361,613,53"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="57,216,0,0" VerticalAlignment="Top"/>
+        <Button Command="{Binding CreateMovie}" Content="Déposez votre film" Margin="64,333,593,81"/>
 
     </Grid>
 </Page>

@@ -10,14 +10,14 @@ namespace MovieNetModel.Factory
 {
     class DaoFactory : AbstractDaoFactory
     {
-        public override IUserDao getUserDao()
+        public override IUserDao getUserDao(DataModelContainer dataModel)
         {
-            return new UserDao();
+            return new UserDao(dataModel);
         }
 
-        public override IMovieDao getMovieDao()
+        public override IMovieDao getMovieDao(DataModelContainer dataModel)
         {
-            return new MovieDao();
+            return new MovieDao(dataModel);
         }
 
         public override ICommentDao getCommentDao()

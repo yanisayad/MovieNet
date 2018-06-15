@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieNetModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace MovieNet
         public MainWindow()
         {
             InitializeComponent();
+            base.DataContext = new MainViewModel(Office);
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -30,24 +32,5 @@ namespace MovieNet
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void GoToOffice(object sender, RoutedEventArgs e)
-        {
-            Office.Content = new OfficeWindow();
-        }
     }
 }
